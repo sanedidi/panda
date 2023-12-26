@@ -1,0 +1,199 @@
+.catalog {
+    margin: 100px 0 50px;
+    // .catalog__wrapper
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        justify-content: start;
+    }
+
+    // .catalog__link
+
+    &__link {
+        color: #5DE8DC;
+        font-size: 25px;
+        font-weight: 400;
+        text-decoration: underline;
+        line-height: 42px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: -moz-max-content;
+        width: max-content;
+        font-family: "Gilroy";
+    }
+
+    // .catalog__card
+
+    &__card {
+        display: flex;
+        gap: 35px;
+        background-color: #161B1B;
+        padding: 30px;
+        border-radius: 20px;
+        position: relative;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 480px) {
+            padding: 10px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            background-image: url(./../img/x.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 200px;
+            height: 200px;
+            z-index: -99;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 200px;
+            right: 0px;
+            background-image: url(./../img/x.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 200px;
+            height: 200px;
+            z-index: -99;
+        }
+    }
+
+    // .catalog__img
+
+    &__img {
+        width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    // .catalog__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    // .catalog__title
+
+    &__title {
+        color: white;
+        font-size: clamp(2.5rem, 1.818rem + 3.41vw, 4.375rem);
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    // .catalog__card-text
+
+    &__card-text {
+        color: #B5B5B5;
+        font-size: clamp(1.125rem, 1.014rem + 0.56vw, 1.5rem);
+        font-family: "Gilroy", sans-serif;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    // .catalog__price
+
+    &__price {
+        color: white;
+        font-size: clamp(1.563rem, 1.285rem + 1.39vw, 2.5rem);
+        font-weight: 600;
+        line-height: 56px;
+        font-family: "Gilroy", sans-serif;
+    }
+
+    // .catalog__btns
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    // .catalog__btn
+
+    &__btn {
+        width: 161px;
+        height: 51px;
+        background-color: #5DE8DC;
+        color: #031413;
+        font-size: 22.08px;
+        font-weight: 400;
+        line-height: 22.08px;
+        letter-spacing: 1.55px;
+        font-family: 'BigNoodleTitling', sans-serif;
+    }
+
+    &__socials {
+        top: 0;
+        left: 0;
+        display: none;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        background-color: hsla(0, 0%, 0%, 0.7);
+
+        padding: 10px;
+
+        width: 100%;
+        height: 100vh;
+        z-index: 99;
+
+
+
+        &.active {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__modal {
+        width: 100%;
+        max-width: 350px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .3s;
+        border-radius: 10px;
+
+        svg:hover {
+            fill: #5de8dc;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-size: 35px;
+            font-weight: 500;
+            color: #161B1B;
+        }
+    }
+}
